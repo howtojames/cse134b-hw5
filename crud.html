@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   
+    <title>Blogs</title>
+
+    <link rel="stylesheet" href="styledcrud.css">
+
+    <script>
+    </script>
+
+    <template id="blogTemp">
+            <h1 id="title">Title</h1>
+            <p id = "date">Date</p>
+            <p id = "summery">Summary</p>
+    </template>
+</head>
+
+<body>
+    <header>
+        <h1>Blog Database</h1>
+    </header>
+
+    <main>
+        
+        <section id="blog">
+            <form>
+                <fieldset>
+                    <legend>Add a Blog</legend>
+
+                    <label for="title">Title</label>
+
+                    <input type="text" name="title">
+
+                    <label for="">Date</label>
+                    <input type="text" name="author">
+                    <br \>
+                    <label for="summary">Summary</label>
+                    <textarea name="summary"cols="50" rows="5"></textarea>
+                    <input type="submit" value="Add blog">
+                </fieldset>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>

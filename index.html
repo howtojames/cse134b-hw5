@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>James' HTML Site</title>
+        <link rel="stylesheet" href="style.css">
+
+        
+         
+    </head>
+
+    <body>
+        
+        <header> 
+            <h1 class="abovenav"> 
+                <a href="index.html" height="80">
+                    <img src="logo.png" width="50" height="50" alt="This image is the logo of the website."> 
+                    James' Portfolio 
+                </a>
+            </h1>
+
+            <nav> 
+                <a href="index.html">Home</a>
+                <a href="persona.html">Persona Diagram</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+                <a href="extra.html">Extra</a>
+                <a href="nativedialogs.html">Native Dialogs</a>
+                <a href="customdialog.html">Custom Dialogs</a>
+
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+
+        <!--header for the navigation bar-->
+        <section class="onehome">
+            <h2>Welcome to my website!</h2>
+            Use the links above to navigate through the site.
+        </section>
+
+        
+        
+
+        <form class="twohome">
+            <fieldset>
+                <legend>Pronouns</legend>
+                <label for="gender"> What are your pronouns?</label>
+                <select name="gender" id="gender">
+                    <optgroup label="pronouns">
+                        <option value="he/him">he/him</option>
+                        <option value="she/her">she/her</option>
+                        <option value="they/them">they/them</option>
+                    </optgroup>
+                    <optgroup label="other">
+                        <option value="I prefer not to say">I perfer not to say</option>
+                    </optgroup>  
+                </select>
+                <br />
+                <!--Which was to submit b is better?-->
+                <input type="submit" value="Submit"> 
+            </fieldset>
+        </form>
+        
+        <form class="threehome">
+            <fieldset>
+                <legend>Browser</legend>
+                    <label for="three">What browser are you using?</label>
+                    <input list="blist" name="three" id="three">
+                    <br />
+                    <datalist id="blist">
+                        <option value="Chrome">
+                        <option value="Edge">
+                        <option value="Safari">
+                        <option value="Firefox">
+                        <option value="Opera">
+                    </datalist>
+                    <input type="submit">
+            </fieldset>
+        </form>
+
+        <form class="fourhome">
+            <fieldset>
+                <p>What is your reason to visit this website?</p>
+                <legend>Reason</legend>
+                <input type="radio" id="1" name="'o1" value="Came here by accident.">
+                <label for="1"> Came here by accident.</label><br>
+ 
+                <input type="radio" id="2" name="'o2" value="I am a grader.">
+                <label for="2"> I am a grader.</label><br>
+
+                <input type="radio" id="3" name="'o3" value="I am a recruiter.">
+                <label for="3"> I am a recruiter.</label><br>
+
+                <label for="4">Other:</label><br>
+                <textarea id="4" name="o4" rows="4" cols= "50"></textarea>
+                <br />
+                <!--maybe input tag could better-->
+                <input type="submit" value="Submit">
+            </fieldset>
+        </form>
+
+        <section class="fivehome">
+        <!--button is inline-->
+        <button type="button" class="five" id="updatedbutton">
+            What does this button do?
+        </button>
+        </section>  
+
+        </main>
+
+        <footer class="bottom">
+            <span>&copy; James Inc. 2022</span>
+            <span>&copy; Last Updated on July 27, 2022</span>
+        </footer>
+    </body>
+
+    <script>
+        var nothingButton = document.getElementById("updatedbutton");
+        nothingButton.addEventListener("click", () => {
+            window.alert("welcome to the site!");
+        }); 
+
+    </script>
+
+</html>
+

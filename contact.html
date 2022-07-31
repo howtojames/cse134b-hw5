@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <title>James' HTML Site</title>
+        
+        <link rel="stylesheet" href="style.css">
+        
+
+        <script type="module">
+            /*import everything marked as export into customDialog bundle*/
+            import * as customDialog from './customdialog.js'
+
+            customDialog.defineCustomElements();
+        </script>
+
+    <style>
+        tabel, th, td, tr{
+            border: 1px solid black;
+        }
+    </style>
+    </head>
+
+    <body>
+        <header> 
+            <h1> 
+                <a href="index.html">
+                    <img src="logo.png" width="50" height="50" alt="logo"> 
+                    James' Portfolio 
+                </a>
+            </h1>
+
+            <nav> 
+                <a href="index.html">Home</a>
+                <a href="persona.html">Persona Diagram</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+                <a href="extra.html">Extra</a>
+                <a href="nativedialogs.html">Native Dialogs</a>
+                <a href="customdialog.html">Custom Dialogs</a>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+        
+        <section class="onecontact">
+        <h2>Contact</h2>
+        <details>
+            
+            <summary>Click here for contact information.</summary>
+            <!--inside summary dropbox-->
+            email: jrjamesruan@gmail.com
+        </details>
+        </section>
+     
+        
+
+        <p class="twocontact">More Information will be upated later with JS
+        <template id="info-template">
+            <p>More information can be hidden and revealed using template with JS.</p>
+        </template> 
+        </p>
+    
+        
+        <table class="threecontact">
+            <caption><code>Schedule of Availability</code></caption>
+            <colgroup>
+                <col span="2" class="week-view">
+            </colgroup>
+            
+            <tr>
+                <th><code>Mon-Fri</code></th>
+                <th><code>Sat-Sun</code></th>
+            </tr>
+            <tr>
+                <td><code>After 6pm</code></td>
+                <td><code>All-Day</code></td>
+                
+            </tr>
+        </table>
+
+    </main>
+    </body>
+
+</html>

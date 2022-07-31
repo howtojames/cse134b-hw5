@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>James' HTML Site</title>
+        <link rel="stylesheet" href="style.css">
+        <!--want to select an html element and put in JS
+        document ojbect, queryselector, with query selector what kind of element
+        we want to grab, gets canvas tag, then puts it in canvas var
+        now we can draw 2d sh apes with c.fillRect-->       
+        <style>
+            canvas {
+                border: 1px solid black;
+            }
+            
+        </style>
+    </head>
+
+    <body>
+        <header> 
+            <h1> 
+                <a href="index.html">
+                    <img src="logo.png" width="50" height="50" alt="logo"> 
+                    James' Portfolio 
+                </a>
+            </h1>
+
+            <nav> 
+                <a href="index.html">Home</a>
+                <a href="persona.html">Persona Diagram</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+                <a href="extra.html">Extra</a>
+                </ul>
+            </nav>
+        </header>
+        
+        <main class="extramain">
+        
+       <!--section works to contain header levels-->
+        <section class="oneextra">
+            <h2>Extra</h2>
+            Here is the testing grounds for various html tags.
+        </section>
+        
+
+        <section class="twoextra">
+            
+            <span>Putting this here to prevent myself from overusing div tags.</span>
+            <br />
+            <span>While div is the genertic <b>block</b> container, span is the generic <b>inline</b> container.</span>
+            <br />
+            <span>While <b>b</b> and <i>i</i> tags are only visual, <strong>strong</strong> and <em>em</em> tags gives both visual and semantic meaning.</span>
+            <pre>This is a test of the defualt style set for the tag.</pre> 
+            <code> This is a test of the code tag in html.</code>
+        </section>
+
+        
+        <p class="threeextra">This a test of the iframe tag in html.
+            <br \>
+        <iframe src="contact.html" width="500" height="200" name="google"></iframe>
+        </p>
+        
+
+        <p class="fourextra">Click on the button below to play a audio clip.
+        <br />
+        <audio controls>
+            <source src="sample.mp3" type="audio/mpeg">
+        </audio>
+        </p>
+
+        
+        <p class="fiveextra">Congrats Class of 2022!
+        <video width="320" height="240" controls>
+            <source src="ucsdgrad144p.mp4" type="video/mp4">
+        </video>
+        </p>
+        
+
+        <!--script for canvas must come after the canvas tag-->
+        <p class="sixextra"><code>I wonder why these squares getting bigger?</code>
+        <canvas width="500" height="250"></canvas>
+        <script>
+            var canvas = document.querySelector('canvas');
+            var c = canvas.getContext('2d');
+            //x,y,width,height
+            c.fillRect(50, 50, 50, 50);
+            c.fillRect(150, 50, 100, 100);
+            c.fillRect(300, 50, 150, 150);            
+        </script>
+        </p>
+        
+        <!--section to organize-->
+        <section class="sevenextra">
+        <p>Animation</p>
+        <svg class="s1" width="500" height="250"></svg>
+        <br /><br /><br />
+        <p>Transition on Click/Tap</p>
+        <svg class="s2" width="500" height="250" tabindex="1"></svg>
+        <br />
+        <p>Transform</p>
+        <svg class="s3" width="500" height="250"></svg>
+        <h5><code>What's the meaning of these squares?</code></h5>
+        </section>
+
+      
+
+        </main>
+    </body>
+
+</html>

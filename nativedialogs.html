@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Native Dialogues</title>
+
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.10/purify.min.js">
+       </script>      
+    </head>
+    <body>
+
+        <button type="button" id="alert">Alert</button>
+        <br />
+
+        <button type="button" id="confirm">Confirm</button>
+        <output > The value returned by the confirm method is :
+            <span id="valueReturn"></span>
+        </output>
+        <br />
+
+        <button type="button" id="Prompt">Prompt</button>
+        <output> 
+            <span id="valueReturn2"></span>
+        </output>
+        <br />
+
+        <button type="button" id="SPrompt">Safer Prompt</button>
+        <output> 
+            <span id="valueReturn3"></span>
+        </output>
+
+        
+        
+
+        <script>
+            /*use unique variables*/
+            var valert = document.getElementById("alert");
+            valert.addEventListener("click", () => {
+                window.alert("alert message!");
+            });
+
+            var vconfirm = document.getElementById("confirm");
+            vconfirm.addEventListener("click", () => {
+                if(confirm("confirm")==true)
+                    document.getElementById("valueReturn").innerHTML = true;
+                else
+                    document.getElementById("valueReturn").innerHTML = false;
+            });
+
+            var vPrompt = document.getElementById("Prompt");
+            vPrompt.addEventListener("click", () => {
+                /*p holds the user input from the prompt*/
+                let nameInput = prompt("Enter your name");
+                if (nameInput !=null)
+                    document.getElementById("valueReturn2").innerHTML =  `Welcome ${nameInput}!`;
+                else
+                    document.getElementById("valueReturn2").innerHTML = "User didn't enter anything";
+            });
+
+           
+
+            var vSPrompt = document.getElementById("SPrompt");
+            vSPrompt.addEventListener("click", () => {
+                let nameInput2 = prompt("Enter your name");
+                /*cleans html*/
+                const cleanedInput = DOMPurify.sanitize(nameInput2);
+       
+                if (nameInput2 != null)
+                    document.getElementById("valueReturn3").innerHTML =  `Welcome ${cleanedInput}!`;
+                else
+                    document.getElementById("valueReturn3").innerHTML = "User didn't enter anything";
+            });
+           
+        </script>
+
+    </body>
+
+
+</html>

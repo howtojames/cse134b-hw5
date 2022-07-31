@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Custom Dialog</title>
+        <style>
+            #background, #background2, #background3{
+                display:none;
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                top: 0px;
+                left: 0px;
+
+                opacity: 0.7;
+                z-index: 1000;
+                margin: 0;
+                padding: 0;   
+            }
+            #box, #box2, #box3{
+                /*initially dialog box is hidden*/
+                display: none;
+                position: fixed;
+                width: 50vw;
+                height: 15vh;
+                z-index: 2000;
+                top: 0px;
+                background-color: white;
+            }
+            
+            #header, #header2, #header3{
+                background-color: white;
+                color: black;
+                font-size: 20px;
+                padding: 10px;
+                margin: 10px 10px 0px 10px;
+            }
+            
+            #body, #body2, #body3 {
+                background-color: white;
+                color: black;
+                font-size: 14px;
+                padding: 10px;
+                margin: 0px 10px 0px 10px;
+            }
+            
+            #footer, #footer2 {
+                background-color: white;
+                text-align: right;
+            }
+            #footer3{
+                background-color: white;
+                text-align: right;
+                top: 8vh;
+            }
+
+            #okalert, #okconfirm, #okprompt{
+                background-color: blue;
+                color: white;
+            }
+
+            #cancelconfirm, #cancelprompt {
+                background-color: blue;
+                color: white;
+            }
+        </style>
+
+
+
+    </head>
+    <body>
+        <!--dialog buttons-->
+        <button onclick="alertObject.dialogBox('Alert message!')">Custom Alert</button>
+        <br \><br \>
+        <button onclick="confirmObject.dialogBox2('Confirm?')">Custom Confirm</button>
+        <br \><br \>
+        <span id="confirmReturnValue"></span>
+        <br \><br \>
+        <button onclick="promptObject.dialogBox3('Enter your name:')">Custom Prompt</button>
+        <br \><br \>
+        <span id="promptReturnValue"></span>
+
+        <!--alert dialogue -->
+        <dialog open id="background">
+        </dialog open>
+        <dialog open id="box">
+            <!--dialog open id="header">Welcome</dialog>-->
+            <dialog open id="body"><span id="bodyValue"></span></dialog>
+            <dialog open id="footer">
+                <!--using onclick, another way instead of addEventListener-->
+                <button onclick="alertObject.ok()" id="okalert">OK</button>
+            </dialog>
+        </dialog>
+
+        <!--confirm dialogue-->
+        <dialog open id="background2">
+        </dialog open>
+        <dialog open id="box2">
+            <!--dialog open id="header">Welcome</dialog>-->
+            <dialog open id="body2"><span id="bodyValue2"></span></dialog>
+            <dialog open id="footer2">
+                <!--using onclick, another way instead of addEventListener-->
+                <button onclick="confirmObject.ok()" id="okconfirm">OK</button>
+                <br \>
+                <button onclick="confirmObject.cancel()" id="cancelconfirm">Cancel</button>
+            </dialog>
+        </dialog>
+        
+        <!--prompt dialogue-->
+        <dialog open id="background3">
+        </dialog open>
+        <dialog open id="box3">
+            <dialog open id="header3"><span id="headerValue3"></span></dialog>
+            <dialog open id="body3"><span id="bodyValue3"></span></dialog>
+            <dialog open id="footer3">
+                <!--using onclick, another way instead of addEventListener-->
+                <input id="promptInput">
+                <button onclick="promptObject.ok()" id="okprompt">OK</button>
+                <br \>
+                <button onclick="promptObject.cancel()" id="cancelprompt">Cancel</button>
+            </dialog>
+        </dialog>
+        
+        
+
+    </body>
+
+
+    <script type="module" src="./main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.10/purify.min.js">
+    </script>
+    
+    
+
+    <!--module doenst work, even when deployed-->
+    <!--<script type="module" src="main.js"></script>-->
+
+</html>

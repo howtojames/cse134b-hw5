@@ -1,0 +1,284 @@
+/*for custom font*/
+@font-face {
+    font-family: roboto;
+    src: url(Roboto-Regular.ttf);
+}
+
+* {
+    /*multiple for fall back*/
+    font-family: roboto, sans-serif, serif;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 100%;
+    height:100%;
+}
+
+.abovenav{
+    background-image: url("cubes.png");
+    height: 100%;
+    width:100%;
+}
+
+
+
+
+
+/*for container grid
+applies to main content after header*/
+main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50vh, 5vw;
+    grid-auto-rows: minmax(100px, auto);    
+    overflow-x:auto;
+    padding: 0.5em;
+
+    background-image: url("whiteback.jpg");
+}
+
+/*homepage grid*/
+.onehome{
+    grid-column:1/3;
+    grid-row:1;
+}
+.onehome *{
+    padding: 5vh 0 0 0;
+    font-size: 1.2em;
+}
+
+.twohome{
+    grid-column:1;
+    grid-row:2;
+}
+
+.threehome{
+    grid-column:2;
+    grid-row:2;
+}
+
+
+section > button {
+    margin: 10vh 10vw;
+    
+}
+
+.onepersona {
+    padding: 5vh 5vh;
+    grid-column:1/3;
+    grid-row:1;
+}
+
+.twopersona {
+    /*fill the entire screen and scale*/
+    grid-column:1/3;
+    grid-row:2;
+}
+/*want to fill page generally*/
+.twopersona img {
+    padding: 0 10vw 0 0;
+    width: 100%;
+}
+
+
+.threepersona{
+    grid-column:1/3;
+    grid-row:3;
+    
+}
+/*want to center with 50%*/
+.threepersona *{
+    padding: 0 10vw 0 10vw; 
+    width: 69%;
+}
+/*two and tree same except width*/
+
+
+
+
+
+/*projects page*/
+.oneproject{
+    grid-column: 1;
+    grid-row: 1/2;
+    padding: 5vh 0 0 7vw;
+   
+}
+.twoproject{
+    grid-column: 2;
+    grid-row: 1/2;
+    padding: 9vh 0;
+}
+
+/*contact page*/
+.onecontact{
+    grid-column: 1;
+    grid-row: 1/2;
+    padding: 8vh 4vw;
+   
+}
+.onecontact > details > summary {
+    padding: 1vh 0;
+}
+
+.twocontact{
+    grid-column: 2;
+    grid-row: 1/2;
+    padding: 10vh 0 0 0;
+}
+.threecontact{
+    grid-column: 1/3;
+    grid-row: 2;
+    padding: 5vh 35vw;
+}
+
+.extramain > * {
+    border: 1px solid black;
+}
+
+/*extra page*/
+.oneextra{
+    grid-column: 1;
+    grid-row: 1;
+    padding: 8vh 1vh;
+    
+}
+.twoextra{
+    grid-column: 2;
+    grid-row: 1;
+    padding: 8vh 0vh;
+}
+.threeextra{
+    grid-column: 1/3;
+    grid-row: 2;
+}
+
+.fourextra{
+    grid-column: 1;
+    grid-row: 3;
+    padding: 8vh;
+}
+.fiveextra{
+    grid-column: 2;
+    grid-row: 3;
+}
+.sixextra{
+    grid-column: 1;
+    grid-row: 4;
+
+}
+.sevenextra{
+    grid-column: 1;
+    grid-row: 5;
+}
+
+
+
+/*logo and page name*/
+header h1{
+    background-color: black;
+    /*padding to vertically center, relative to font size*/
+    padding: 0.5em;
+}
+
+header a {
+    /* so that when clicked on it doenst turn purple and underlined */
+    text-decoration:none;
+    color: white; 
+    padding: 0.5em;
+}
+
+header nav {
+    background-color: #36454f;
+    padding: 2vh 0;
+    
+}
+header > nav a {
+    color: White;
+    display:inline;
+    text-align: center;
+    /*for spacing the elements, ok for all device*/
+    margin-inline: 8px;
+    /*only for vertical*/
+
+    font-size: 1.1em;
+    /*link padding same with nav padding, easy to press buttons*/
+    /*don't want menu to expand horizonally, so absolute vales*/
+    padding: 2vh 8px;
+
+}
+
+body * {
+    font-size: 1.05em;
+}
+
+legend {
+    border: 1px solid black;
+}
+
+
+/*for animations*/
+body div{
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    animation-name: s1;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes s1{
+    0% {background-color: red;}
+    50% {background-color: orange;}
+    100% {background-color: yellow;}
+}
+
+
+.s1{
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    animation-name: s1;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+@keyframes s1{
+    0% {background-color: blue;}
+    50% {background-color: green;}
+    100% {background-color: yellow;}   
+}
+
+.s2{
+    width: 50px;
+    height: 50px;
+    background-color: green;
+    animation-name: s2;
+    transition: width 3s;
+}
+
+.s2:focus{
+    width: 250px;
+}
+
+
+.s3{
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    animation-name: s3;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+}
+@keyframes s3{
+    0% {}
+    50% {transform: rotate(0.5turn)}
+    100% {transform: rotate(1turn)}
+}
+
+
+.bottom { 
+    font-size: 12px !important;
+}
+

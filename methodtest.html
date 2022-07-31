@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP with JavaScript</title>
+</head>
+
+<body>
+    <main>
+        <h1>HTTP with JavaScript</h1>
+        <!--POST for uploading, endpoint
+        GET for getting data from server-->
+        <form action="https://www.httpbin.org/post" method="post" target="post_response"  id="form1">
+
+            <div>
+            <label for="id">ID:</label>
+            <input type="text" id="id" name="id">
+            </div>
+
+            </div>
+            <label for="article_name">Article Name:</label>
+            <input type="text" id="article_name" name="article_name">
+            </div>
+
+            <div>
+            <label for="article_body">Article Body:</label>
+            <input type="text" id="article_body" name="article_body">
+            </div>
+
+            <div>
+                <span id="time"></span>
+            </div>
+       
+
+            <fieldset>
+            <button type="button" id="buttonone">postBtn</button>
+            <button type="button" id="buttontwo"> getBtn</button>
+            <button type="button" id="buttonthree">putbtn</button>
+            <button type="button" id="buttonfour">deleteBtn</button>
+            </fieldset>
+
+            <fieldset>
+            <legend>POST output</legend>
+
+            <pre><output id="response"></output></pre>
+            </fieldset>
+
+        </form> 
+
+    </main>
+
+    <script type="module">
+
+        /*time*/
+        var today = new Date();
+        document.getElementById("time").innerHTML = today;
+        
+        /*init*/
+        window.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('buttonone').addEventListener('click', postFunction);
+        document.getElementById('buttontwo').addEventListener('click', getFunction);
+        document.getElementById('buttonthree').addEventListener('click', putFunction); 
+        
+        });
+
+        function postFunction() {
+        console.log(`in postFunction`);
+
+        /*XMLHttpRequest object*/
+        let xhr = new XMLHttpRequest();
+
+        let packet = `id=${document.getElementById('id').value}
+                        &article_name=${document.getElementById('article_name').value}
+                        &article_body=${document.getElementById('article_body').value}`;
+
+        xhr.reponseType = 'json';
+
+        /*initializes a request, method, url, async=true*/
+        xhr.open('POST','https://www.httpbin.org/post', true);
+
+        xhr.onload = function () {
+            /*gets the response text*/
+                if(xhr.readyState ==4 && xhr.status==200){
+                    
+                    /*gets the data element in json file*/
+                    let parsedJSON= xhr.response;
+                    
+                    document.getElementById('response').innerHTML = parsedJSON;
+                }
+        }
+        xhr.send(packet);
+        } 
+
+        function getFunction(){
+
+            let xhr = new XMLHttpRequest(); 
+            xhr.open("GET","https://httpbin.org/get", false);
+            xhr.send(null);
+            
+            document.getElementById('response').innerHTML = xhr.responseText;
+        }
+
+        function putFunction(){
+
+            let xhr = new XMLHttpRequest();
+
+            let packet = `id=${document.getElementById('id').value}
+                        &article_name=${document.getElementById('article_name').value}
+                        &article_body=${document.getElementById('article_body').value}`;
+
+            xhr.reponseType = 'json';
+
+            
+            xhr.open('PUT','https://www.httpbin.org/put', true);
+            xhr.setRequestHeader('enctype','multipart/form-data');
+
+            xhr.onload = function () {
+                /*gets the response text*/
+                if(xhr.readyState ==4 && xhr.status==200){
+                    
+                /*gets the data element in json file*/
+                let parsedJSON= xhr.response;
+                    
+                document.getElementById('response').innerHTML = parsedJSON;
+                }
+            }
+
+            xhr.send(packet);
+        }
+
+        function deleteFunction(){
+            
+            let xhr = new XMLhttpRequest();
+            xhr.open("DELETE","https://httpbin.org/delete");
+            xhr.setRequestHeader('Content-type','application/json');
+
+
+
+        }
+
+
+
+        
+
+    </script>
+
+    
+
+</body>
+</html>
